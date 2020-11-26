@@ -47,3 +47,6 @@ The following 3 circuits presents the schematic connections made in this project
 ![DAC circuit - 74595](/img/DAC1.png)
 ![DAC circuit - DAC1](/img/DAC2.png)
 ![DAC circuit - DAC2](/img/DAC3.png)
+
+### Circuit Overview
+![Overview](/img/over.png)
