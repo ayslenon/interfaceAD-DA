@@ -92,9 +92,9 @@ int main (void) {
     _delay_ms(1);
 
     // Check if the logic level in the serial input is high or low for each bit in ADC register
-    read_value = 0;
+    read_value = 0x00;
     for (int i = 0; i < 8; i++) {
-      if (PINB & ADC_IN_READ) read_value += (1<<i);
+      if (PINB & ADC_IN_READ) read_value |= (1<<i);
       // Pulse ADC_OUT_CLK_C to increment one bit for the parallel to serial conversion via the 4051 IC
       PORTB ^= ADC_OUT_CLK_C;
       _delay_ms(1);
@@ -110,7 +110,7 @@ int main (void) {
     for (int i = 0; i < 8; i++) {
       // According to the read_value, we set and reset the DAC_REG_SER
 
-      if ((read_value & (1 << i)) == (1 << i)) PORTD |= DAC_REG_SER;
+      if ((final_value & (1 << i)) == (1 << i)) PORTD |= DAC_REG_SER;
       else PORTD &= (~DAC_REG_SER);
       
       // then we pulse the DAC_REG_CLK1 to shift the register 74595 IC

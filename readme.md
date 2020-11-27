@@ -37,6 +37,9 @@ I recommend you to see the datasheets, from both IC I used:
 
 The following 3 circuits presents the schematic connections made in this project.
 
+### Circuit Overview
+![Overview](/img/over.png)
+
 ### ADC Circuit
 ![ADC circuit](/img/ADC.png)
 
