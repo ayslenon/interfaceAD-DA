@@ -9,7 +9,7 @@
 
 ## Overview
 This project was made for a class, the focus is to understand how the ADC and DAC conversion works.
-Here I used the ADC0804 and DAC0832, and made a interface for each one to use with the Atmega328p
+Here I used the ADC0804 and DAC0832, and made a interface for each one to use with the Atmega328p.
 The ADC0804 has 8bit parallel output, so I multiplexed its outputs to have one bit serial, and 
 made the conversion with a 4051 IC multiplexer and a 40193 IC counter.
 
@@ -21,9 +21,9 @@ Afterwards, the uC will have the AD conversion in its memory, and we can use thi
 I decided to make a complement of 1, and send a 8bit value to the DAC.
 
 For the DA conversion I decided to use a 74595 shift register to store 8bit incoming from uC, and then send these 8bit to 
-the DAC0832, using it in 2 different schematics to compare its outputs
+the DAC0832, using it in 2 different schematics to compare its outputs.
 
-The store is made by a clock incrementing the shift register, after 8 shifts the output is set to send data to the DAC
+The store is made by a clock incrementing the shift register, after 8 shifts the output is set to send data to the DAC.
 
 I recommend you to see the datasheets, from both IC I used:
 - [ADC0804](https://www.ti.com/lit/ds/symlink/adc0804-n.pdf) 
